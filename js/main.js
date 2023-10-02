@@ -1,12 +1,115 @@
 function initialize() {
+	
+	var towns = [ 
+		{ name: "Acton", id: "Acton" },
+		{ name: "Arlington", id: "Arlington" },
+		{ name: "Ashland", id: "Ashland" },
+		{ name: "Bedford", id: "Bedford" },
+		{ name: "Bellingham", id: "Bellingham" },
+		{ name: "Belmont", id: "Belmont" },
+		{ name: "Beverly", id: "Beverly" },
+		{ name: "Bolton", id: "Bolton" },
+		{ name: "Boston", id: "Boston" },
+		{ name: "Boxborough", id: "Boxborough" },
+		{ name: "Braintree", id: "Braintree" },
+		{ name: "Brookline", id: "Brookline" },
+		{ name: "Burlington", id: "Burlington" },
+		{ name: "Cambridge", id: "Cambridge" },
+		{ name: "Canton", id: "Canton" },
+		{ name: "Carlisle", id: "Carlisle" },
+		{ name: "Chelsea", id: "Chelsea" },
+		{ name: "Cohasset", id: "Cohasset" },
+		{ name: "Concord", id: "Concord" },
+		{ name: "Danvers", id: "Danvers" },
+		{ name: "Dedham", id: "Dedham" },
+		{ name: "Dover", id: "Dover" },
+		{ name: "Essex", id: "Essex" },
+		{ name: "Everett", id: "Everett" },
+		{ name: "Foxborough", id: "Foxborough" },
+		{ name: "Framingham", id: "Framingham" },
+		{ name: "Franklin", id: "Franklin" },
+		{ name: "Gloucester", id: "Gloucester" },
+		{ name: "Hamilton", id: "Hamilton" },
+		{ name: "Hingham", id: "Hingham" },
+		{ name: "Holbrook", id: "Holbrook" },
+		{ name: "Holliston", id: "Holliston" },
+		{ name: "Hopkinton", id: "Hopkinton" },
+		{ name: "Hudson", id: "Hudson" },
+		{ name: "Hull", id: "Hull" },
+		{ name: "Ipswich", id: "Ipswich" },
+		{ name: "Lexington", id: "Lexington" },
+		{ name: "Lincoln", id: "Lincoln" },
+		{ name: "Littleton", id: "Littleton" },
+		{ name: "Lynn", id: "Lynn" },
+		{ name: "Lynnfield", id: "Lynnfield" },
+		{ name: "Malden", id: "Malden" },
+		{ name: "Manchester", id: "Manchester" },
+		{ name: "Marblehead", id: "Marblehead" },
+		{ name: "Marlborough", id: "Marlborough" },
+		{ name: "Marshfield", id: "Marshfield" },
+		{ name: "Maynard", id: "Maynard" },
+		{ name: "Medfield", id: "Medfield" },
+		{ name: "Medford", id: "Medford" },
+		{ name: "Medway", id: "Medway" },
+		{ name: "Melrose", id: "Melrose" },
+		{ name: "Middleton", id: "Middleton" },
+		{ name: "Milford", id: "Milford" },
+		{ name: "Millis", id: "Millis" },
+		{ name: "Milton", id: "Milton" },
+		{ name: "Nahant", id: "Nahant" },
+		{ name: "Natick", id: "Natick" },
+		{ name: "Needham", id: "Needham" },
+		{ name: "Newton", id: "Newton" },
+		{ name: "Norfolk", id: "Norfolk" },
+		{ name: "North Reading", id: "North Reading" },
+		{ name: "Norwell", id: "Norwell" },
+		{ name: "Norwood", id: "Norwood" },
+		{ name: "Peabody", id: "Peabody" },
+		{ name: "Quincy", id: "Quincy" },
+		{ name: "Randolph", id: "Randolph" },
+		{ name: "Reading", id: "Reading" },
+		{ name: "Revere", id: "Revere" },
+		{ name: "Rockland", id: "Rockland" },
+		{ name: "Rockport", id: "Rockport" },
+		{ name: "Salem", id: "Salem" },
+		{ name: "Saugus", id: "Saugus" },
+		{ name: "Scituate", id: "Scituate" },
+		{ name: "Sharon", id: "Sharon" },
+		{ name: "Sherborn", id: "Sherborn" },
+		{ name: "Somerville", id: "Somerville" },
+		{ name: "Southborough", id: "Southborough" },
+		{ name: "Stoneham", id: "Stoneham" },
+		{ name: "Stow", id: "Stow" },
+		{ name: "Sudbury", id: "Sudbury" },
+		{ name: "Swampscott", id: "Swampscott" },
+		{ name: "Topsfield", id: "Topsfield" },
+		{ name: "Wakefield", id: "Wakefield" },
+		{ name: "Walpole", id: "Walpole" },
+		{ name: "Waltham", id: "Waltham" },
+		{ name: "Watertown", id: "Watertown" },
+		{ name: "Wayland", id: "Wayland" },
+		{ name: "Wellesley", id: "Wellesley" },
+		{ name: "Wenham", id: "Wenham" },
+		{ name: "Weston", id: "Weston" },
+		{ name: "Westwood", id: "Westwood" },
+		{ name: "Weymouth", id: "Weymouth" },
+		{ name: "Wilmington", id: "Wilmington" },
+		{ name: "Winchester", id: "Winchester" },
+		{ name: "Winthrop", id: "Winthrop" },
+		{ name: "Woburn", id: "Woburn" },
+		{ name: "Wrentham", id: "Wrentham" }
+	];
 
     var sky = [
-		{ Name: "No Data", Id: 99 },
-        { Name: "Suuny", Id: 1 },
-        { Name: "Partly Cloudy", Id: 2 },
-        { Name: "Overcast", Id: 3 },
-        { Name: "Precipitation", Id: 4 }
+		{ name: "No Data", id: 99 },
+        { name: "Suuny", id: 1 },
+        { name: "Partly Cloudy", id: 2 },
+        { name: "Overcast", id: 3 },
+        { name: "Precipitation", id: 4 }
     ];
+	
+	
+	// Setup grid for input of count data
 	
 	var columns = [
 		{ title: "Time", name: "time", type: "text", inserting: false, filtering: false, editing: false, sorting: false}, 
@@ -82,19 +185,16 @@ function initialize() {
 	];
 	
 
+	// Create grid for input of count data itself
     $("#jsGrid").jsGrid({
         width: "100%",
         height: "600px",
-		
 		pageSize: 12,
- 
         inserting: true,
         editing: true,
         sorting: false,
         paging: true,
- 
         data: empty_data,
- 
         fields: columns
     });
 } // initialize
