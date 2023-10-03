@@ -184,6 +184,8 @@ function initialize() {
 		{ time : " 8:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 	];
 	
+	$('#tabs').tabs();
+	
 	// Populate combo box of towns
 	$('#towns').append($('<option>', { 
 		value: 0,
@@ -205,7 +207,6 @@ function initialize() {
 	  dateFormat: "mm-dd-yy",
 	  onClose: function(dateText, inst) {
 			       selectedDate = $('#date').datepicker('getDate');
-				   var _DEBUG_HOOK = 0;
 	          }
     });
 	
