@@ -4,6 +4,10 @@
 	font-family:"Trebuchet MS","sans-serif";
 }
 
+#input_area_1 {
+	margin-bottom: 10px;
+}
+
 // Don't display the jsGrid "insert row"
 // Unfortunately, the CSS rule alone doesn't seem to work;
 // hidden via $('.jsgrid-insert-row').hide(); in JS code.
