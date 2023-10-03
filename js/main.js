@@ -197,4 +197,5 @@ function initialize() {
         data: empty_data,
         fields: columns
     });
+	$('.jsgrid-insert-row').hide();
 } // initialize
