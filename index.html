@@ -26,9 +26,16 @@
 	</script>
 	
 	<!-- CSS and JS for jsgrid-->
+	<!--
 	<link type="text/css" rel="stylesheet" href="libs/jsgrid-1.5.3/jsgrid.min.css" />
 	<link type="text/css" rel="stylesheet" href="libs/jsgrid-1.5.3/jsgrid-theme.min.css" />
 	<script type="text/javascript" src="libs/jsgrid-1.5.3/jsgrid.min.js"></script>
+	-->
+	
+	<!-- CSS and JS for ag-grid -->
+	<script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+	<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
 	
 	<!-- JS and CSS for 'main page' of app -->
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
@@ -37,7 +44,7 @@
 </head>
 <body>
 	<h3>Bike-Ped Count Input</h3>
-	<div id="jsGrid"></div>
+	<div id="myGrid" style="height: 500px; width:500px;" class="ag-theme-balham"></div>
 	
 	<script>
 	$(document).ready(function() {

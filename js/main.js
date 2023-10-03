@@ -111,7 +111,7 @@ function initialize() {
 	
 	// Setup grid for input of count data
 	
-	var columns = [
+	var columns_prod = [
 		{ title: "Time", name: "time", type: "text", inserting: false, filtering: false, editing: false, sorting: false}, 
 		{ title: "Bicyclist", name: "bike", type: "number", inserting: true, filtering: false, editing: true, sorting: false  },
 		{ title: "Pedestrian / Walker", name: "ped", type: "number", inserting: true, filtering: false, editing: true, sorting: false },
@@ -184,17 +184,22 @@ function initialize() {
 		{ time : " 8:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 	];
 	
+    const columnDefs = [
+        {headerName: 'Make', field: 'make'},
+        {headerName: 'Model', field: 'model'},
+        {headerName: 'Price', field: 'price', editable: true}
+    ];
+    const rowData = [
+        {make: 'Toyota', model: 'Celica', price: 35000},
+        {make: 'Ford', model: 'Mondeo', price: 32000},
+        {make: 'Porsche', model: 'Boxter', price: 72000}
+    ];
+    const gridOptions = {
+        columnDefs: columnDefs,
+        rowData: rowData
+    };
+    const eGridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(eGridDiv, gridOptions);
 
-	// Create grid for input of count data itself
-    $("#jsGrid").jsGrid({
-        width: "100%",
-        height: "600px",
-		pageSize: 12,
-        inserting: true,
-        editing: true,
-        sorting: false,
-        paging: true,
-        data: empty_data,
-        fields: columns
-    });
+
 } // initialize
