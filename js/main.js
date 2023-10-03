@@ -1,6 +1,6 @@
 function initialize() {
 	
-	var towns = [ 
+	var aTowns = [ 
 		{ name: "Acton", id: "Acton" },
 		{ name: "Arlington", id: "Arlington" },
 		{ name: "Ashland", id: "Ashland" },
@@ -183,6 +183,18 @@ function initialize() {
 		{ time : " 8:30 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 8:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 	];
+	
+	// Populate combo box of towns
+	$('#towns').append($('<option>', { 
+		value: 0,
+		text : "Select a town"
+	}))
+	aTowns.forEach(function(town) {
+		$('#towns').append($('<option>', { 
+			value: town.name,
+			text : town.name 
+		}));
+	});
 	
 
 	// Create grid for input of count data itself
