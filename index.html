@@ -32,10 +32,10 @@
 	<script type="text/javascript" src="libs/jsgrid-1.5.3/jsgrid.min.js"></script>
 	-->
 	
-	<!-- CSS and JS for ag-grid -->
-	<script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
-	<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+	<!-- CSS and JS for datatables-->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
 	
 	<!-- JS and CSS for 'main page' of app -->
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
@@ -44,7 +44,84 @@
 </head>
 <body>
 	<h3>Bike-Ped Count Input</h3>
-	<div id="myGrid" style="height: 500px; width:500px;" class="ag-theme-balham"></div>
+	
+	<table id="myTable" class="display">
+		<thead>
+			<tr>
+				<th>Time</th>
+				<th>Bicyclist</th>
+				<th>Pedestrian</th>
+				<th>Child in carrier</th>
+				<th>Jogger</th>
+				<th>Rollerblader / Skater</th>
+				<th>Wheelchair user</th>
+				<th>Other</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>6:30 a.m.</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>6:45 a.m.</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>7:00 a.m.</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>7:15 a.m. </td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>7:30 a.m. </td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>7:45 a.m. </td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>			
+		</tbody>
+	</table> 
+	
 	
 	<script>
 	$(document).ready(function() {

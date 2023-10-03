@@ -184,22 +184,7 @@ function initialize() {
 		{ time : " 8:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 	];
 	
-    const columnDefs = [
-        {headerName: 'Make', field: 'make'},
-        {headerName: 'Model', field: 'model'},
-        {headerName: 'Price', field: 'price', editable: true}
-    ];
-    const rowData = [
-        {make: 'Toyota', model: 'Celica', price: 35000},
-        {make: 'Ford', model: 'Mondeo', price: 32000},
-        {make: 'Porsche', model: 'Boxter', price: 72000}
-    ];
-    const gridOptions = {
-        columnDefs: columnDefs,
-        rowData: rowData
-    };
-    const eGridDiv = document.querySelector('#myGrid');
-    new agGrid.Grid(eGridDiv, gridOptions);
+	$('#myTable).DataTable();
 
 
 } // initialize
