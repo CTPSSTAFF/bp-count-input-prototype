@@ -25,10 +25,9 @@
 			referrerpolicy="no-referrer">
 	</script>
 	
-	<!-- CSS and JS for jsgrid-->
-	<link type="text/css" rel="stylesheet" href="libs/jsgrid-1.5.3/jsgrid.min.css" />
-	<link type="text/css" rel="stylesheet" href="libs/jsgrid-1.5.3/jsgrid-theme.min.css" />
-	<script type="text/javascript" src="libs/jsgrid-1.5.3/jsgrid.min.js"></script>
+	<!-- CSS and JS for gridjs -->
+	<script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 	
 	<!-- JS and CSS for 'main page' of app -->
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
@@ -37,7 +36,7 @@
 </head>
 <body>
 	<h3>Bike-Ped Count Input</h3>
-	<div id="jsGrid"></div>
+	<div id="wrapper"></div>
 	
 	<script>
 	$(document).ready(function() {
