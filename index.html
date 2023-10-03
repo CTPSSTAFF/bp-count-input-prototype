@@ -18,6 +18,10 @@
 	<!-- JS for jQuery library> -->
 	<script src="libs/jquery-3.7.1.min.js"></script>
 	
+	<!-- JS and CSS for jQueryUI library -->
+	<script src="libs/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="libs/jquery-ui-1.13.2/jquery-ui.min.css" />
+	
 	<!-- JS for lodash.js library -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.js" 
 	        integrity="sha512-2iwCHjuj+PmdCyvb88rMOch0UcKQxVHi/gsAml1fN3eg82IDaO/cdzzeXX4iF2VzIIes7pODE1/G0ts3QBwslA==" 
@@ -37,6 +41,16 @@
 </head>
 <body>
 	<h3>Bike-Ped Count Input</h3>
+	<div id="input_area_1">
+		<span>
+			<label for="towns">Town:</label>
+			<select name="towns" id="towns">
+			</select>
+			&nbsp;
+			<label for="date">Date:</label>
+		</span>
+	</div>
+	
 	<div id="jsGrid"></div>
 	
 	<script>
