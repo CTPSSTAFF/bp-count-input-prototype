@@ -196,6 +196,19 @@ function initialize() {
 		}));
 	});
 	
+	var selectedDate = '';
+	
+	// Datepicker
+	$('#date').datepicker({
+      changeMonth: true,
+      changeYear: true,
+	  dateFormat: "mm-dd-yy",
+	  onClose: function(dateText, inst) {
+			       selectedDate = $('#date').datepicker('getDate');
+				   var _DEBUG_HOOK = 0;
+	          }
+    });
+	
 
 	// Create grid for input of count data itself
     $("#jsGrid").jsGrid({
