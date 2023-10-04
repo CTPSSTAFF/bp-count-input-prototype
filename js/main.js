@@ -1,5 +1,10 @@
+function submitHandler(e) {
+	var _DEBUG_HOOK = 0;
+	var allRows_1 = $('#jsGrid_1 table.jsgrid-table > tbody > tr');
+	// To be continued
+}
+
 function initialize() {
-	
 	var aTowns = [ 
 		{ name: "Acton", id: "Acton" },
 		{ name: "Arlington", id: "Arlington" },
@@ -109,8 +114,7 @@ function initialize() {
     ];
 	
 	
-	// Setup grid for input of count data
-	
+	// Definition of columns of grids for input of count data
 	var columns = [
 		{ title: "Time", name: "time", type: "text", inserting: false, filtering: false, editing: false, sorting: false}, 
 		{ title: "Bicyclist", name: "bike", type: "number", inserting: true, filtering: false, editing: true, sorting: false  },
@@ -121,9 +125,8 @@ function initialize() {
 		{ title: "Wheelchair User", name: "wheelchair", type: "number", inserting: true, filtering: false, editing: true, sorting: false }
 	];
 	
-	var empty_data = [
-		{ time : " 6:00 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 }, // For the sake of symmetry
-		{ time : " 6:15 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 }, // For the sake of symmetry
+	// Defintion of initial state of all grids
+	var empty_data_1 = [
 		{ time : " 6:30 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 6:45 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 7:00 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
@@ -133,7 +136,9 @@ function initialize() {
 		{ time : " 8:00 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 8:15 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 8:30 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
-		{ time : " 8:45 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
+		{ time : " 8:45 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 }	
+	];
+	var empty_data_2 = [
 		{ time : " 9:00 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 9:15 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 9:30 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
@@ -145,7 +150,9 @@ function initialize() {
 		{ time : "11:00 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : "11:15 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : "11:30 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
-		{ time : "11:45 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
+		{ time : "11:45 am", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 }
+	];
+	var empty_data_3 = [
 		{ time : "12:00 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : "12:15 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : "12:30 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
@@ -157,7 +164,9 @@ function initialize() {
 		{ time : " 2:00 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 2:15 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 2:30 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
-		{ time : " 2:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
+		{ time : " 2:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 }
+	];
+	var empty_data_4 = [
 		{ time : " 3:00 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 3:15 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 3:30 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
@@ -169,7 +178,9 @@ function initialize() {
 		{ time : " 5:00 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 5:15 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 5:30 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
-		{ time : " 5:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
+		{ time : " 5:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 }
+	];
+	var empty_data_5 = [
 		{ time : " 6:00 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 6:15 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 6:30 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
@@ -181,10 +192,11 @@ function initialize() {
 		{ time : " 8:00 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 8:15 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
 		{ time : " 8:30 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
-		{ time : " 8:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 },
+		{ time : " 8:45 pm", "bike" : 0, "ped" : 0, "child" : 0, "jogger" : 0, "skater" : 0, "wheelchair" : 0 }
 	];
 	
-	$('#tabs').tabs();
+	// Create tabs control
+	$('#tabs').tabs({ active: 0 });
 	
 	// Populate combo box of towns
 	$('#towns').append($('<option>', { 
@@ -210,9 +222,8 @@ function initialize() {
 	          }
     });
 	
-
-	// Create grid for input of count data itself
-    $("#jsGrid").jsGrid({
+	// Create grids for the input of count data
+    $("#jsGrid_1").jsGrid({
         width: "100%",
         height: "600px",
 		pageSize: 12,
@@ -220,8 +231,57 @@ function initialize() {
         editing: true,
         sorting: false,
         paging: true,
-        data: empty_data,
+        data: empty_data_1,
         fields: columns
     });
+	$("#jsGrid_2").jsGrid({
+        width: "100%",
+        height: "600px",
+		pageSize: 12,
+        inserting: true,
+        editing: true,
+        sorting: false,
+        paging: true,
+        data: empty_data_2,
+        fields: columns
+    });
+	$("#jsGrid_3").jsGrid({
+        width: "100%",
+        height: "600px",
+		pageSize: 12,
+        inserting: true,
+        editing: true,
+        sorting: false,
+        paging: true,
+        data: empty_data_3,
+        fields: columns
+    });
+	$("#jsGrid_4").jsGrid({
+        width: "100%",
+        height: "600px",
+		pageSize: 12,
+        inserting: true,
+        editing: true,
+        sorting: false,
+        paging: true,
+        data: empty_data_4,
+        fields: columns
+    });
+	$("#jsGrid_5").jsGrid({
+        width: "100%",
+        height: "600px",
+		pageSize: 12,
+        inserting: true,
+        editing: true,
+        sorting: false,
+        paging: true,
+        data: empty_data_5,
+        fields: columns
+    });
+	
+	// Hide the "insert row" row of all grids - we're not using it
 	$('.jsgrid-insert-row').hide();
+	
+	// Bind on-click handler for "Submit" button
+	$('#submit').on('click', submitHandler);
 } // initialize
