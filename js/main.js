@@ -1,5 +1,19 @@
 function submitHandler(e) {
 	var _DEBUG_HOOK = 0;
+	
+	// Information pertaining to all mode-specific counts associated with this 'uber-count'
+	var town = $('#towns option:selected').text();
+	// var date = $('#date').datepicker('getDate');
+	var temp = $('#temp').val();
+	var sky = $('#sky').val();
+	var from_st = $('#from_st').val();
+	var from_st_dir = $('#from_st_dir').val();
+	var to_st = $('#to_st').val();
+	var to_st_dir = $('#to_st_dir').val();
+	var desc = $('#description').val();
+	
+	_DEBUG_HOOK = 1;
+	
 	var allRows_1 = $('#grid_1 table.grid-table > tbody > tr');
 	allRows_1.each((index, element) => {
 		var tds, time, bike, ped, child, jogger, skater, wheelchair;
