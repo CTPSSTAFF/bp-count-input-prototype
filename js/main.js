@@ -1,7 +1,19 @@
 function submitHandler(e) {
 	var _DEBUG_HOOK = 0;
 	var allRows_1 = $('#jsGrid_1 table.jsgrid-table > tbody > tr');
-	// To be continued
+	allRows_1.each((index, element) => {
+		var tds, time, bike, ped, child, jogger, skater, wheelchair;
+		tds = $(element).find('td');
+		time = $(tds[0]).text();	// Will require processing
+		bike = $(tds[1]).text();
+		ped  = $(tds[2]).text();
+		child = $(tds[3]).text();
+		jogger = $(tds[4]).text();
+		skater = $(tds[5]).text();
+		wheelchair = $(tds[6]).text();
+		// other = $(tds[7]).text();
+		console.log(time + ' ' + bike + ' ' + ped + ' ' + child + ' ' + jogger + ' ' + skater + ' ' + wheelchair);
+	});
 }
 
 function initialize() {
