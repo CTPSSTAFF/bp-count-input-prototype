@@ -8,9 +8,19 @@
 	margin-bottom: 10px;
 }
 
-// Don't display the jsGrid "insert row"
-// Unfortunately, the CSS rule alone doesn't seem to work;
-// hidden via $('.jsgrid-insert-row').hide(); in JS code.
-tr.js-grid-insert-row {
-	display: none;
+.grid-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.grid-row>.grid-cell {
+	background: #fff;
+}
+
+.grid-cell {
+	border: 1px solid #f3f3f3;
+}
+
+.grid-cell {
+	padding: 0.5em;
 }
