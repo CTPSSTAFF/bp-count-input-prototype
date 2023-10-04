@@ -35,3 +35,6 @@
 	box-sizing: border-box;
 }
 
+td.grid-cell input {
+	border: none;
+}
