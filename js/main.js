@@ -1,6 +1,6 @@
 function submitHandler(e) {
 	var _DEBUG_HOOK = 0;
-	var allRows_1 = $('#jsGrid_1 table.jsgrid-table > tbody > tr');
+	var allRows_1 = $('#grid_1 table.grid-table > tbody > tr');
 	allRows_1.each((index, element) => {
 		var tds, time, bike, ped, child, jogger, skater, wheelchair;
 		tds = $(element).find('td');
@@ -11,7 +11,7 @@ function submitHandler(e) {
 		jogger = $(tds[4]).text();
 		skater = $(tds[5]).text();
 		wheelchair = $(tds[6]).text();
-		// other = $(tds[7]).text();
+		other = $(tds[7]).text();
 		console.log(time + ' ' + bike + ' ' + ped + ' ' + child + ' ' + jogger + ' ' + skater + ' ' + wheelchair);
 	});
 }
