@@ -4,9 +4,15 @@
 	font-family:"Trebuchet MS","sans-serif";
 }
 
-#input_area_1 {
+.control_div {
 	margin-bottom: 10px;
 }
+
+.control_div .street_name {
+	width: 200px;
+}
+
+
 
 .align-right {
 	text-align: right;
