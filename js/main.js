@@ -1,3 +1,11 @@
+const bikeColIx = 1,
+      pedColIx = 2,
+	  childColIx = 3, 
+	  jogColIx = 4, 
+	  skateColIx = 5,
+	  wheelColIx = 6,
+	  otherColIx = 7;
+	  
 function submitHandler(e) {
 	var _DEBUG_HOOK = 0;
 	
