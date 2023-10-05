@@ -41,60 +41,55 @@
 </head>
 <body>
 	<h3>Bike-Ped Count Input</h3>
-	<div class="control_div">
-		<span>
-			<label for="towns">Town:</label>
-			<select id="towns" name="towns">
-			</select>
-			&nbsp;
-			<label for="date">Date:</label>
-			<input type="text" id="date">
-			&nbsp;
-			<label for="temp">Temperature:</label>
-			<input type="text">
-			&nbsp;
-			<label for="sky">Sky condition:</label>
-			<select id="sky" name="sky">
-				<option value="99" selected>Nothing recorded</option>
-				<option value="1">Sunny</option>
-				<option value="2">Partly cloudy</option>
-				<option value="3">Overcast</option>
-				<option value="4">Sunny</option>
-			</select>
-		</span>
-	</div>
-	<div class="control_div">
-		<span>
-			<label for="from_st">From street:</label>
-			<input type="text" class="street_name"/>
-			<label for="from_st_dir">From street direction:</label>
-			<select id="from_st_dir"> name="from_st_dir">
-				<option value="All" selected>All</option>
-				<option value="NB">NB</option>
-				<option value="SB">SB</option>
-				<option value="EB">EB</option>
-				<option value="WB">WB</option>
-			</select>
-		</span>
-	</div>
-	<div class="control_div">
-		<span>
-			<label for="to_st">To street:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-			<input type="text" class="street_name"/>
-			<label for="from_st_dir">To street direction:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-			<select id="from_st_dir" name="from_st_dir">
-				<option value="All" selected>All</option>
-				<option value="NB">NB</option>
-				<option value="SB">SB</option>
-				<option value="EB">EB</option>
-				<option value="WB">WB</option>
-			</select>
-		</span>
-	</div>
-	<div class="control_div">
-	<label for="description">Description:</label>
-		<input type="text" id="description" class="description">
-	</div>
+	<div class="controls_container">
+		<div class="controls_row_1">
+				<label for="towns">Town:</label>
+				<select id="towns" name="towns">
+				</select>
+				&nbsp;
+				<label for="date">Date:&nbsp;&nbsp;&nbsp;</label>
+				<input type="text" id="date">
+				&nbsp;
+				<label for="temp">Temperature:</label>
+				<input type="text">
+				&nbsp;
+				<label for="sky">Sky condition:</label>
+				<select id="sky" name="sky">
+					<option value="99" selected>Nothing recorded</option>
+					<option value="1">Sunny</option>
+					<option value="2">Partly cloudy</option>
+					<option value="3">Overcast</option>
+					<option value="4">Sunny</option>
+				</select>
+		</div>
+		<div class="controls_row_2">
+				<label for="from_st">From street:</label>
+				<input type="text" class="street_name"/>
+				<label for="from_st_dir">From street direction:&nbsp;</label>
+				<select id="from_st_dir"> name="from_st_dir">
+					<option value="All" selected>All</option>
+					<option value="NB">NB</option>
+					<option value="SB">SB</option>
+					<option value="EB">EB</option>
+					<option value="WB">WB</option>
+				</select>
+				
+				<label for="to_st">To street:&nbsp;&nbsp;</label>
+				<input type="text" class="street_name"/>
+				<label for="from_st_dir">To street direction:&nbsp;</label>
+				<select id="from_st_dir" name="from_st_dir">
+					<option value="All" selected>All</option>
+					<option value="NB">NB</option>
+					<option value="SB">SB</option>
+					<option value="EB">EB</option>
+					<option value="WB">WB</option>
+				</select>
+		</div>
+		<div class="controls_row_3">
+			<label for="description">Description:</label>
+			<input type="text" id="description" class="description">
+		</div>
+	</div> <!-- control_wrapper -->
 
 	
 	<div id="tabs">
