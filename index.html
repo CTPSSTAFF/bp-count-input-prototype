@@ -95,9 +95,7 @@
 	<label for="description">Description:</label>
 		<input type="text" id="description" class="description">
 	</div>
-	<div class="control_div">
-		<input type="button" id="submit" value="Submit" />
-	</div>
+
 	
 	<div id="tabs">
 		<ul>
@@ -106,6 +104,7 @@
 			<li><a href="#tab_3">12:00 to 2:45 pm</a></li>
 			<li><a href="#tab_4">3:00 to 5:45 pm</a><li>
 			<li><a href="#tab_5">6:00 to 8:45 pm</a></li>
+			<li><a href="#tab_6">Review and Submit</a></li>
 		</ul>
 		<div id="tab_1">
 			<table id="grid_1">
@@ -779,14 +778,24 @@
 				</tbody>
 			</table>
 		</div>
+		<div id="tab_6">
+			<h3>Review Input and Submit</h3>
+			<hr/>
+			<h4>Summary of Data Input</h4>
+			<p>
+				This section is TBD.
+			</p>
+			<hr/>
+			<h4>Submit Input</h4>
+			<p>
+				If the data entered looks OK, press the <strong>Submit</strong> below to submit it to the staging database.
+			</p>
+			<div class="control_div">
+				<input type="button" id="submit" value="Submit" />
+			</div>
+		</div>
 	</div>
 		
-	
-	<!-- TEMP -->
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
-	<div id="jsGrid_1"></div>
 	
 	<script>
 	$(document).ready(function() {
