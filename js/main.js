@@ -14,21 +14,23 @@ function submitHandler(e) {
 	
 	_DEBUG_HOOK = 1;
 	
-	var allRows_1 = $('#grid_1 table.grid-table > tbody > tr');
+	var allRows_1 = $('#grid_1 > tbody > tr');
+	// Get time from "id" on <tr> element
+	var time = allRows_1[0].id;
+	
 	allRows_1.each((index, element) => {
-		var tds, time, bike, ped, child, jogger, skater, wheelchair;
+		var tds, bike, ped, child, jogger, skater, wheelchair;
 		tds = $(element).find('td');
-		time = $(tds[0]).text();	// Will require processing
-		bike = $(tds[1]).text();
-		ped  = $(tds[2]).text();
-		child = $(tds[3]).text();
-		jogger = $(tds[4]).text();
-		skater = $(tds[5]).text();
-		wheelchair = $(tds[6]).text();
-		other = $(tds[7]).text();
+		bike = $(tds[1]).find('input').val();
+		ped  = $(tds[2]).find('input').val();
+		child = $(tds[3]).find('input').val();
+		jogger = $(tds[4]).find('input').val();
+		skater = $(tds[5]).find('input').val();
+		wheelchair = $(tds[6]).find('input').val();
+		other = $(tds[7]).find('input').val();
 		console.log(time + ' ' + bike + ' ' + ped + ' ' + child + ' ' + jogger + ' ' + skater + ' ' + wheelchair);
 	});
-}
+} // submitHandler
 
 function initialize() {
 	var aTowns = [ 
