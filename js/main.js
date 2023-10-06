@@ -15,9 +15,9 @@ function submitHandler(e) {
 	var temp = $('#temp').val();
 	var sky = $('#sky').val();
 	var from_st = $('#from_st').val();
-	var from_st_dir = $('#from_st_dir').val();
+	var from_st_dir = $('#from_st_dir option:selected').text();
 	var to_st = $('#to_st').val();
-	var to_st_dir = $('#to_st_dir').val();
+	var to_st_dir = $('#to_st_dir' option:selected').text();
 	var desc = $('#description').val();
 	
 	_DEBUG_HOOK = 1;
