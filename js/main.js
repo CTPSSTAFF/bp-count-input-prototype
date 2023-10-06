@@ -22,9 +22,43 @@ function submitHandler(e) {
 	
 	_DEBUG_HOOK = 1;
 	
-	var allRows_1 = $('#grid_1 > tbody > tr');
+	// Assemble all rows into a single Array
+	
+	var rows_1 = $('#grid_1 > tbody > tr'),
+	    rows_2 = $('#grid_2 > tbody > tr'),
+		rows_3 = $('#grid_3 > tbody > tr'),
+		rows_4 = $('#grid_4 > tbody > tr'),
+		rows_5 = $('#grid_5 > tbody > tr');
+	var i, allrows = [];
+	
+	for (i = 0; i < rows_1.length; i++) {
+		allrows.push(rows_1[i]);
+	}
+	for (i = 0; i < rows_2.length; i++) {
+		allrows.push(rows_2[i]);
+	}
+	for (i = 0; i < rows_3.length; i++) {
+		allrows.push(rows_3[i]);
+	}
+	for (i = 0; i < rows_4.length; i++) {
+		allrows.push(rows_4[i]);
+	}
+	for (i = 0; i < rows_5.length; i++) {
+		allrows.push(rows_5[i]);
+	}
+	
+	// Total # of rows should be 58, i.e., 10 + 12 + 12 + 12 + 12 + 12
+	console.log("Total # of rows = " + allrows.length);
+	
+	_DEBUG_HOOK = 2;
+	return;
+	
 	// Get time from "id" on <tr> element
-	var time = allRows_1[0].id;
+	var time = allrows[0].id;
+	
+
+	
+	
 	
 	allRows_1.each((index, element) => {
 		var tds, bike, ped, child, jogger, skater, wheelchair;
