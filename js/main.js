@@ -22,7 +22,7 @@ function submitHandler(e) {
 	
 	_DEBUG_HOOK = 1;
 	
-	// Assemble all rows into a single Array
+	// Assemble all rows into a single array "allrows"
 	
 	var rows_1 = $('#grid_1 > tbody > tr'),
 	    rows_2 = $('#grid_2 > tbody > tr'),
@@ -51,15 +51,25 @@ function submitHandler(e) {
 	console.log("Total # of rows = " + allrows.length);
 	
 	_DEBUG_HOOK = 2;
-	return;
 	
-	// Get time from "id" on <tr> element
-	var time = allrows[0].id;
+	// Assemble a single array of data for each input type (column),
+	// i.e., bike, ped, child, jogger, skater, wheelchair, and other.
 	
-
+	var bike_data = [], ped_data = [], child_data = [], jogger_data = [],
+	    skater_data = [], wheelchair_data = [], other_data = [];
+	
+	// bike
+	var b, val;
+	for (i = 0; i < allrows.length; i++) {
+		b = $(allrows[i]).find('.bike');
+		val = $(b).find('input').val();
+		bike_data.push(val);
+	}
+	
+	_DEBUG_HOOK = 3;
 	
 	
-	
+/*
 	allRows_1.each((index, element) => {
 		var tds, bike, ped, child, jogger, skater, wheelchair;
 		tds = $(element).find('td');
@@ -72,6 +82,7 @@ function submitHandler(e) {
 		other = $(tds[7]).find('input').val();
 		console.log(time + ' ' + bike + ' ' + ped + ' ' + child + ' ' + jogger + ' ' + skater + ' ' + wheelchair);
 	});
+*/
 } // submitHandler
 
 function initialize() {
