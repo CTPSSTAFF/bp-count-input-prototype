@@ -55,34 +55,57 @@ function submitHandler(e) {
 	// Assemble a single array of data for each input type (column),
 	// i.e., bike, ped, child, jogger, skater, wheelchair, and other.
 	
-	var bike_data = [], ped_data = [], child_data = [], jogger_data = [],
-	    skater_data = [], wheelchair_data = [], other_data = [];
+	var bike_data = [], ped_data = [], child_data = [], jog_data = [],
+	    skate_data = [], wheelchair_data = [], other_data = [];
+	var temp, val;
 	
 	// bike
-	var b, val;
 	for (i = 0; i < allrows.length; i++) {
-		b = $(allrows[i]).find('.bike');
-		val = $(b).find('input').val();
+		temp = null;
+		temp = $(allrows[i]).find('.bike');
+		val = $(temp).find('input').val();
 		bike_data.push(val);
 	}
+	// ped
+	for (i = 0; i < allrows.length; i++) {
+		temp = $(allrows[i]).find('.ped');
+		val = $(temp).find('input').val();
+		ped_data.push(val);
+	}
+	// child
+	for (i = 0; i < allrows.length; i++) {
+		temp = $(allrows[i]).find('.child');
+		val = $(temp).find('input').val();
+		child_data.push(val);
+	}
+	// jogger
+	for (i = 0; i < allrows.length; i++) {
+		temp = $(allrows[i]).find('.jog');
+		val = $(temp).find('input').val();
+		jog_data.push(val);
+	}
+	for (i = 0; i < allrows.length; i++) {
+		temp = $(allrows[i]).find('.skate');
+		val = $(temp).find('input').val();
+		skate_data.push(val);
+	}
+	for (i = 0; i < allrows.length; i++) {
+		temp = $(allrows[i]).find('.wheel');
+		val = $(temp).find('input').val();
+		wheel_data.push(val);
+	}
+	// other
+	for (i = 0; i < allrows.length; i++) {
+		temp = $(allrows[i]).find('.other');
+		val = $(temp).find('input').val();
+		other_data.push(val);
+	}
+	
+	
 	
 	_DEBUG_HOOK = 3;
 	
-	
-/*
-	allRows_1.each((index, element) => {
-		var tds, bike, ped, child, jogger, skater, wheelchair;
-		tds = $(element).find('td');
-		bike = $(tds[1]).find('input').val();
-		ped  = $(tds[2]).find('input').val();
-		child = $(tds[3]).find('input').val();
-		jogger = $(tds[4]).find('input').val();
-		skater = $(tds[5]).find('input').val();
-		wheelchair = $(tds[6]).find('input').val();
-		other = $(tds[7]).find('input').val();
-		console.log(time + ' ' + bike + ' ' + ped + ' ' + child + ' ' + jogger + ' ' + skater + ' ' + wheelchair);
-	});
-*/
+	// TO BE CONTINUED
 } // submitHandler
 
 function initialize() {
