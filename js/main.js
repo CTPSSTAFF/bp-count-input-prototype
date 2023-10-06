@@ -23,7 +23,6 @@ function submitHandler(e) {
 	_DEBUG_HOOK = 1;
 	
 	// Assemble all rows into a single array "allrows"
-	
 	var rows_1 = $('#grid_1 > tbody > tr'),
 	    rows_2 = $('#grid_2 > tbody > tr'),
 		rows_3 = $('#grid_3 > tbody > tr'),
@@ -46,15 +45,16 @@ function submitHandler(e) {
 	for (i = 0; i < rows_5.length; i++) {
 		allrows.push(rows_5[i]);
 	}
-	
 	// Total # of rows should be 58, i.e., 10 + 12 + 12 + 12 + 12 + 12
 	console.log("Total # of rows = " + allrows.length);
+	if (allrows.length !== 58) {
+		alert('Error total # of rows = ' + allrows.length + '. Should be 58.');
+	}
 	
 	_DEBUG_HOOK = 2;
 	
 	// Assemble a single array of data for each input type (column),
 	// i.e., bike, ped, child, jogger, skater, wheelchair, and other.
-	
 	var bike_data = [], ped_data = [], child_data = [], jog_data = [],
 	    skate_data = [], wheelchair_data = [], other_data = [];
 	var td, val;
@@ -100,11 +100,27 @@ function submitHandler(e) {
 		other_data.push(val);
 	}
 	
-	
-	
 	_DEBUG_HOOK = 3;
+	// Everything should be in place to input the data into the staging database.
+	// Note: TBD replace 'town' with 'bp_countloc_id'.
+	//
+	// For development / validation: write data out in CSV format
+	//
 	
-	// TO BE CONTINUED
+	// HERE: PHP code to insert data into count table of staging database.
+	// The SQL will look something like the following:
+	//
+	// QUESTION: What do to about 'count_id'.
+	//
+	// INSERT INTO bp_counts (id, bp_locid, count_id, description, temperature, sky, 
+	//						  count_type, town, from_st_name, from_st_dir, to_st_name, to_st_dir,
+	//                        cnt_0630, cnt_0645, ... cnt_2030, cnt_2045, cnt_total),
+	//        VALUES         ( ... ),
+	//                       ( ... ),
+	//                       etc.,
+	//                       ( ...),;
+	
+	
 } // submitHandler
 
 function initialize() {
