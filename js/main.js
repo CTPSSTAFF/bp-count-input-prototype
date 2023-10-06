@@ -57,47 +57,46 @@ function submitHandler(e) {
 	
 	var bike_data = [], ped_data = [], child_data = [], jog_data = [],
 	    skate_data = [], wheelchair_data = [], other_data = [];
-	var temp, val;
+	var td, val;
 	
 	// bike
 	for (i = 0; i < allrows.length; i++) {
-		temp = null;
-		temp = $(allrows[i]).find('.bike');
-		val = $(temp).find('input').val();
+		td = $(allrows[i]).find('.bike');
+		val = $(td).find('input').val();
 		bike_data.push(val);
 	}
 	// ped
 	for (i = 0; i < allrows.length; i++) {
-		temp = $(allrows[i]).find('.ped');
-		val = $(temp).find('input').val();
+		td = $(allrows[i]).find('.ped');
+		val = $(td).find('input').val();
 		ped_data.push(val);
 	}
 	// child
 	for (i = 0; i < allrows.length; i++) {
-		temp = $(allrows[i]).find('.child');
-		val = $(temp).find('input').val();
+		td = $(allrows[i]).find('.child');
+		val = $(td).find('input').val();
 		child_data.push(val);
 	}
 	// jogger
 	for (i = 0; i < allrows.length; i++) {
-		temp = $(allrows[i]).find('.jog');
-		val = $(temp).find('input').val();
+		td = $(allrows[i]).find('.jog');
+		val = $(td).find('input').val();
 		jog_data.push(val);
 	}
 	for (i = 0; i < allrows.length; i++) {
-		temp = $(allrows[i]).find('.skate');
-		val = $(temp).find('input').val();
+		td = $(allrows[i]).find('.skate');
+		val = $(td).find('input').val();
 		skate_data.push(val);
 	}
 	for (i = 0; i < allrows.length; i++) {
-		temp = $(allrows[i]).find('.wheel');
-		val = $(temp).find('input').val();
+		td = $(allrows[i]).find('.wheel');
+		val = $(td).find('input').val();
 		wheel_data.push(val);
 	}
 	// other
 	for (i = 0; i < allrows.length; i++) {
-		temp = $(allrows[i]).find('.other');
-		val = $(temp).find('input').val();
+		td = $(allrows[i]).find('.other');
+		val = $(td).find('input').val();
 		other_data.push(val);
 	}
 	
