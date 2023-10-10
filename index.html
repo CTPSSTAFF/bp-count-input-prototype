@@ -43,15 +43,16 @@
 	<h3>Bike-Ped Count Input</h3>
 	<div class="controls_container">
 		<div class="controls_row_1">
-				<label for="towns">Town:</label>
-				<select id="towns" name="towns">
+				<label for="countlocs">Count location:</label>
+				<select id="countlocs" name="countlocs">
 				</select>
-				&nbsp;
+		</div>
+		<div class="controls_row_2">
 				<label for="date">Date:&nbsp;&nbsp;&nbsp;</label>
 				<input type="text" id="date">
 				&nbsp;
 				<label for="temp">Temperature:</label>
-				<input id="temp" type="text">
+				<input type="text" class="temp">&deg;F
 				&nbsp;
 				<label for="sky">Sky condition:</label>
 				<select id="sky" name="sky">
@@ -62,7 +63,7 @@
 					<option value="4">Sunny</option>
 				</select>
 		</div>
-		<div class="controls_row_2">
+		<div class="controls_row_3">
 				<label for="from_st">From street:</label>
 				<input type="text" class="street_name"/>
 				<label for="from_st_dir">From street direction:&nbsp;</label>
@@ -85,7 +86,7 @@
 					<option value="WB">WB</option>
 				</select>
 		</div>
-		<div class="controls_row_3">
+		<div class="controls_row_4">
 			<label for="description">Description:</label>
 			<input type="text" id="description" class="description">
 		</div>
