@@ -10,17 +10,20 @@ function submitHandler(e) {
 	var _DEBUG_HOOK = 0;
 	
 	// Information pertaining to all mode-specific counts associated with this 'uber-count'
-	var town = $('#towns option:selected').text();
-	// var date = $('#date').datepicker('getDate');
-	var temp = $('#temp').val();
+	var bp_locid = $('#countlocs option:selected').val();
+	var dtemp1 = $('#date').datepicker('getDate');
+	// Contrary to what the 1st parameter suggests,
+	// the following call acutally returns a date in the format mm-dd-yyyy.
+	var dtemp2 = $.datepicker.formatDate("mm-dd-yy", dtemp1); 
+	// Convert date to mm/dd/yyyy format
+	var date = dtemp2.replaceAll("-", "/");
+	var temperature = $('#temp').val();
 	var sky = $('#sky').val();
 	var from_st = $('#from_st').val();
 	var from_st_dir = $('#from_st_dir option:selected').text();
 	var to_st = $('#to_st').val();
 	var to_st_dir = $('#to_st_dir option:selected').text();
 	var desc = $('#description').val();
-	
-	_DEBUG_HOOK = 1;
 	
 	// Assemble all rows into a single array "allrows"
 	var rows_1 = $('#grid_1 > tbody > tr'),
@@ -50,8 +53,6 @@ function submitHandler(e) {
 	if (allrows.length !== 58) {
 		alert('Error total # of rows = ' + allrows.length + '. Should be 58.');
 	}
-	
-	_DEBUG_HOOK = 2;
 	
 	// Assemble a single array of data for each input type (column),
 	// i.e., bike, ped, child, jogger, skater, wheelchair, and other.
@@ -100,7 +101,7 @@ function submitHandler(e) {
 		other_data.push(val);
 	}
 	
-	_DEBUG_HOOK = 3;
+	_DEBUG_HOOK = 1;
 	// Everything should be in place to input the data into the staging database.
 	// Note: TBD replace 'town' with 'bp_countloc_id'.
 	//
@@ -110,7 +111,7 @@ function submitHandler(e) {
 	// HERE: PHP code to insert data into count table of staging database.
 	// The SQL will look something like the following:
 	//
-	// QUESTION: What do to about 'count_id'.
+	// QUESTION: What do to about 'count_id'???
 	//
 	// INSERT INTO bp_counts (id, bp_locid, count_id, description, temperature, sky, 
 	//						  count_type, town, from_st_name, from_st_dir, to_st_name, to_st_dir,
