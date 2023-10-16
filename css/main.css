@@ -41,6 +41,18 @@
 	margin-bottom: 10px;
 }
 
+.controls_row_4 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	gap: 10px 10px;
+	margin-bottom: 10px;
+}
+
+.temp {
+	width: 50px;
+}
 
 .description {
 	width: 1000px;
